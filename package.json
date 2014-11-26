@@ -25,12 +25,13 @@
     "joi": "^4.7.x"
   },
   "peerDependencies": {
-    "cloudinary": "^1.0.x"
+    "cloudinary": "^1.0.x",
+    "hapi": ">=8.x.x"
   },
   "devDependencies": {
     "cloudinary": "^1.0.x",
     "code": "1.x.x",
-    "hapi": "7.x.x",
+    "hapi": "8.x.x",
     "lab": "5.x.x"
   }
 }

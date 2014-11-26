@@ -21,10 +21,11 @@ describe('Connector', function () {
     it('configures cloudinary', function (done) {
 
         var server = new Hapi.Server();
+        server.connection();
 
         /* eslint-disable */
         var plugin = {
-            plugin: HapiCloudinaryConnector,
+            register: HapiCloudinaryConnector,
             options: {
                 cloud_name: 'sample',
                 api_key: '874837483274837',
@@ -33,7 +34,7 @@ describe('Connector', function () {
         };
         /* eslint-enable */
 
-        server.pack.register(plugin, function (err) {
+        server.register(plugin, function (err) {
 
             expect(Cloudinary.config('api_key')).to.equal('874837483274837');
             done();
@@ -46,14 +47,14 @@ describe('Connector', function () {
 
         /* eslint-disable */
         var plugin = {
-            plugin: HapiCloudinaryConnector,
+            register: HapiCloudinaryConnector,
             options: {
                 cloud_name: 'sample'
             }
         };
         /* eslint-enable */
 
-        server.pack.register(plugin, function (err) {
+        server.register(plugin, function (err) {
 
             expect(err).to.exist();
             expect(err.message).to.equal('api_key is required');

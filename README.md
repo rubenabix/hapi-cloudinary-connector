@@ -18,9 +18,10 @@ var Hapi = require('hapi');
 var HapiCloudinaryConnector = require('hapi-cloudinary-connector');
 
 var server = new Hapi.Server();
+server.connection();
 
 var plugin = {
-    plugin: HapiCloudinaryConnector,
+    register: HapiCloudinaryConnector,
     options: {
         cloud_name: 'sample',
         api_key: '874837483274837',
@@ -28,7 +29,7 @@ var plugin = {
     }
 };
 
-server.pack.register(plugin, function (err) {
+server.register(plugin, function (err) {
 
     ...
 });
