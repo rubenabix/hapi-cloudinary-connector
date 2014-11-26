@@ -1,6 +1,6 @@
 {
   "name": "hapi-cloudinary-connector",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Cloudinary connector plugin for the hapi framework.",
   "main": "index.js",
   "scripts": {
